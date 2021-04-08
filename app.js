@@ -51,4 +51,8 @@ app.get('/forgot-password',(req, res) => {
 
 
 //Listen on port 4000
+<<<<<<< HEAD
 //app.listen(port, () => console.info('Listening on port ${port}'))
+=======
+//app.listen(port, () => console.info('Listening on port ${port}'))
+>>>>>>> d935064c382810adc1794a8012ef18211b6db56b
