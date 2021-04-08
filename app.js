@@ -1,7 +1,7 @@
 // Imports
 const express = require('express')
 const app = express()
-const port = 5500
+//const port = 5500
 
 //Routing pages
 app.use(express.static('public'))
@@ -51,4 +51,4 @@ app.get('/forgot-password',(req, res) => {
 
 
 //Listen on port 4000
-app.listen(port, () => console.info('Listening on port ${port}'))
+//app.listen(port, () => console.info('Listening on port ${port}'))
