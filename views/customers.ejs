@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Airopay Admin Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        #myInput {
+          background-image: url('/css/searchicon.png');
+          background-position: 10px 10px;
+          background-repeat: no-repeat;
+          width: 100%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+        
+        #myTable {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #ddd;
+          font-size: 18px;
+        }
+        
+        .dot {
+          height: 5px;
+          width: 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        
+        .new {
+          column-count: 3;
+        }
+        
+        #myTable th, #myTable td {
+          text-align: left;
+          padding: 12px;
+        }
+        
+        #myTable tr {
+          border-bottom: 1px solid #ddd;
+        }
+        
+        #myTable tr.header, #myTable tr:hover {
+          background-color: #f1f1f1;
+        }
+
+
+
+        .tabl {
+            width: 100% !important;
+            height: 30% !important;
+            color: #858796;
+
+        }
+        
+        .card {
+            height: 400px !important;
+        }
+
+        .table1 {
+            margin-top: -19px !important;
+            width: 10px !important;
+        }
+
+        .table-bordered1 {
+            width: 50px !important;
+        }
+
+        .topbar .nav-item .nav-link {
+            height: 4.375rem;
+            display: flex;
+            align-items: center;
+            padding: 0 .75rem;
+            margin-left: 1000px !important;
+        }
+
+</style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div className="sidebar__title">
+                    <div className="sidebar__img">
+                        <img src="img/airopaylogo.png" alt="airopaylogo" />
+    
+                    </div>
+                </div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-top: 40px; margin-bottom: -50px;"> 
+                <a class="nav-link" style="color:#000000; font-size: 40px; font-weight: bold;" href="/index">
+                    <i className=""></i>
+                    <i class="fa fa-th-list fa-2x" style="color:#247c50; font-size: 20px;"></i> <span style="color:#000000; font-size: 17px;">Tier Management</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-bottom: -50px;">
+                <a class="nav-link collapsed" href="/notification" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <i class="fa fa-bell fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Notification</span>
+                </a> 
+
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-bottom: -60px;">
+                <a class="nav-link collapsed" href="/allcustomers" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <i class="fa fa-users fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Customers</span>
+                </a>
+
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+                
+
+            
+            
+            
+
+            <div class="account" style="margin-top: 200px; margin-left: 30px; margin-bottom: -20px;">
+                <!-- Nav Item - Tables -->
+                <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <a class="nav-link" style="color:#000000; font-size: 80px; font-weight: bold;" href="/register">
+                        <i class="fa fa-user fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Create User</span></a>
+                </li>
+            </div>
+            <div class="Logout1" style="margin-left: 30px; margin-top: -50px;">
+
+                <!-- Nav Item - Tables -->
+                <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <a class="nav-link" style="color:#000000; font-size: 80px; font-weight: bold;" href="">
+                        <i class="fa fa-sign-out fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Logout</span></a>
+                </li>
+            </div>
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+
+
+
+
+        
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                        
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chidi Ugwu</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Welcome Champ!</h1>
+                        
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary " style="color:#000000;"><i
+                                class="fa fa-download fa-sm text-white-50"></i> Download Report</a>
+
+                    </div>
+                    <div>
+                        <a href="/allcustomers" class="" style="color:#002465">All Customers</a>&nbsp &nbsp
+                        <a href="/customers" class="" style="color:#002465">Customers Details</a>
+                    </div>
+                    &#8287
+                    &#8287
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+
+
+                        <div class="col-xl-7 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-75" style="background-image: url('img/3.png'); object-fit: contain; height: 30px;">
+                                <div class="card-body">
+                                    <div class="col-auto">
+                                        <p style="font-weight: bold; font-size: 30px; color: black;">Tier 2</p>
+                                    </div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary mb-1" style="font-size: 40px;">
+                                                100K Limit</div>
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" style="font-size: 24px; color: black;">
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                &#8287
+                                                <p style="font-size: 24px; color: black;">Meets KYC demand?</p>
+                                                &#8287
+                                                &#8287
+                                                <p><button type="button" class="btn btn-secondary">Upgrade</button></p>
+
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-75 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="container">
+                                                <h2>KYC Information</h2>           
+                                                <table class="table table-bordered2">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>BVN</th>
+                                                      <th style="text-align: right;">Gender</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>30898273837</td>
+                                                      <td style="text-align: right;">Female</td>
+                                                    </tr>
+                                                  </tbody>
+                                                      <thead>
+                                                    <tr>
+                                                      <th>Address</th>
+                                                      <th style="text-align: right;">Date of Birth</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>9 Emma Abimbola Cole Street, Lekki Phase 1, Lagos</td>
+                                                      <td style="text-align: right;">12/03/2021</td>
+                                                    </tr>
+                                                  </tbody>
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Means of Identification                                                 &#8287
+                                                        &#8287<button type="button" value="" class="btn btn-primary" style="width:100px; height:40px"><a href="/" preview>
+                                                      </a>Preview</button></th>
+                                                      <th>Utility Bill<button type="button" value="" class="btn btn-primary" style="width:100px; height:40px"><a href="/" preview>
+                                                      </a>preview</button></th>
+
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td></td>
+                                                      <td></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                                &#8287
+                                            
+                                            <!--<div class="h5 mb-0 font-weight-bold text-gray-800 align-items-center" style="font-size: 12px;">
+                                                <div class="container">           
+                                                    <table class="table1 table-bordered2">
+                                                      <thead>
+                                                        <tr>
+                                                          <th>Utility Bill</th>
+                                                          <th>Means of Identification</th>
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                        <tr>
+                                                          <td></td>
+                                                          <td></td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </div>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        &#8287
+                        &#8287
+                        &#8287
+                        &#8287
+
+                    <!-- Content Row -->
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+
+            <div id="content-wrapper" class="d-flex flex-column">
+                <table id="myTable1">
+                    <tr class="header">
+                      <th style="width:60%;">Felix Mark's last 10 transaction</th>
+                      <th style="width:40%;">                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search fa-2x"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form></th>
+                      
+                    </tr>
+                  </table>
+                  
+                  <table id="myTable">
+                    <tr class="header">
+                      <th style="width:20%;">Transaction Ref</th>
+                      <th style="width:15%;">Date</th>
+                      <th style="width:20%;">Amount</th>
+                      <th style="width:20%;">Payment Method</th>
+                      <th style="width:20%;">Status</th>
+                    </tr>
+                    <tr>
+                      <td>Invoice A/02</td>
+                      <td>Feb 15, 2020</td>
+                      <td>N90,000,000</td>
+                      <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                      <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-danger">Pending</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-danger">Pending</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-danger">Pending</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-success">Paid</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-success">Paid</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-success">Paid</button></td>
+                    </tr>
+                    <tr>
+                        <td>Invoice A/02</td>
+                        <td>Feb 15, 2020</td>
+                        <td>N90,000,000</td>
+                        <td><i class="fa fa-phone" aria-hidden="true"></i>****4231</td>
+                        <td><button type="button" style="width:80px; height: 50px; color:#092D72;" class="btn btn-success">Paid</button></td>
+
+                    </tr>
+                    
+                    
+                    
+                  
+                  </table>
+
+
+            </div>
+
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!--<footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Airopay Inc 2021</span>
+                    </div>
+                </div>
+            </footer>-->
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script>
+        function airopayFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+    </script>
+        
+
+</body>
+
+</html>

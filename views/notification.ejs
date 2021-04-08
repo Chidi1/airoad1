@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Airopay Admin Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        #myInput {
+          background-image: url('/css/searchicon.png');
+          background-position: 10px 10px;
+          background-repeat: no-repeat;
+          width: 100%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+        
+        #myTable {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #ddd;
+          font-size: 18px;
+        }
+        
+        .dot {
+          height: 5px;
+          width: 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        
+        .new {
+          column-count: 3;
+        }
+        
+        #myTable th, #myTable td {
+          text-align: left;
+          padding: 12px;
+        }
+        
+        #myTable tr {
+          border-bottom: 1px solid #ddd;
+        }
+        
+        #myTable tr.header, #myTable tr:hover {
+          background-color: #f1f1f1;
+        }
+
+
+
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+
+        input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        }
+
+        input[type=submit] {
+        background-color: #092D72;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 900px !important;
+        }
+
+        input[type=submit]:hover {
+        background-color: #092D72;
+        }
+
+        .container {
+        border-radius: 50px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        box-shadow: 10px 10px #4CAF50;
+        margin-bottom: 30px !important;
+
+        }
+
+
+</style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div className="sidebar__title">
+                    <div className="sidebar__img">
+                        <img src="img/airopaylogo.png" alt="airopaylogo" />
+    
+                    </div>
+                </div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-top: 40px; margin-bottom: -50px;"> 
+                <a class="nav-link" style="color:#000000; font-size: 40px; font-weight: bold;" href="/index">
+                    <i className=""></i>
+                    <i class="fa fa-th-list fa-2x" style="color:#247c50; font-size: 20px;"></i> <span style="color:#000000; font-size: 17px;">Tier Management</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-bottom: -50px;">
+                <a class="nav-link collapsed" href="/notification" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <i class="fa fa-bell fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Notification</span>
+                </a> 
+
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 20px; margin-bottom: -60px;">
+                <a class="nav-link collapsed" href="/customers" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <i class="fa fa-users fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Customers</span>
+                </a>
+
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+                
+
+            
+            
+            
+
+            <div class="account" style="margin-top: 200px; margin-left: 30px; margin-bottom: -20px;">
+                <!-- Nav Item - Tables -->
+                <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <a class="nav-link" style="color:#000000; font-size: 80px; font-weight: bold;" href="/register">
+                        <i class="fa fa-user fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Create User</span></a>
+                </li>
+            </div>
+            <div class="Logout1" style="margin-left: 30px; margin-top: -50px;">
+
+                <!-- Nav Item - Tables -->
+                <li class="nav-item" style="color:#000000; font-size: 40px; font-weight: bold; margin-left: 10px">
+                    <a class="nav-link" style="color:#000000; font-size: 80px; font-weight: bold;" href="">
+                        <i class="fa fa-sign-out fa-2x" style="color:#247c50; font-size: 20px;"></i><span style="color:#000000; font-size: 17px;">Logout</span></a>
+                </li>
+            </div>
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+
+
+
+
+        
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search fa-2x"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-search fa-2x"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fa fa-search fa-2x"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chidi Ugwu</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Welcome Champ!</h1>
+                        
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary " style="color:#000000;"><i
+                                class="fa fa-download fa-sm text-white-50"></i> Download Report</a>
+
+                    </div>
+                    <div>
+                        <a href="#" class="" style="color:#002465">Send push notification</a>&nbsp &nbsp
+                        
+                    </div>
+
+                    <!-- Content Row -->
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+
+            <div class="container">
+                <form action="">
+              
+                  <label for="country">To</label>
+                  <select id="country" name="country">
+                    <option value="australia"></option>
+                    <option value="canada"></option>
+                    <option value="usa"></option>
+                  </select>
+                  
+                  <label for="lname">Subject</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Type subject..">
+              
+                  <label for="subject">Message</label>
+                  <textarea id="subject" name="subject" placeholder="Type your message.." style="height:200px"></textarea>
+              
+                  <input type="submit" value="Send">
+                </form>
+              </div>
+
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!--<footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Airopay Inc 2021</span>
+                    </div>
+                </div>
+            </footer>-->
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+        
+
+</body>
+
+</html>
